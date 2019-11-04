@@ -35,11 +35,10 @@ ActiveRecord::Schema.define(version: 2019_11_04_113245) do
     t.string "title"
     t.string "type"
     t.text "description"
-    t.string "address"
-    t.boolean "all_day"
+    t.integer "priority"
+    t.integer "status"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
