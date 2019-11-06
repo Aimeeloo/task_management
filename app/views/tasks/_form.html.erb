@@ -16,7 +16,8 @@
 
       <div class="col-lg-10 col-md-12 col-sm-12">
         <%= form.input :category, label: '分類',
-            collection: ['工作','居家','娛樂','學習','其他'] %>
+            collection: ['工作','居家','娛樂','學習','其他'],
+            input_html: { multiple: true } %>
       </div>
 
       <div class="col-lg-10 col-md-12 col-sm-12">
@@ -24,8 +25,11 @@
       </div>
 
       <div class="col-lg-10 col-md-12 col-sm-12">
-        <%= form.input :priority, label: '優先',
-            collection: ['非常緊急', '緊急' ,'普通' ,'小事'] %>
+        <%= form.input :priority, as: :select, collection: Task.priorities.keys, include_blank: false, label: '優先順序' %> 
+      </div>
+
+      <div class="col-lg-10 col-md-12 col-sm-12">
+        <%= form.input :status, as: :select, collection: Task.statuses.keys, include_blank: false, label: '狀態' %> 
       </div>
 
       <div class="col-lg-5 col-md-12 col-sm-12">
