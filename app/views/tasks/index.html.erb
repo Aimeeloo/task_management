@@ -8,7 +8,7 @@
       <li>優先 <%= t.priority %></li>
       <li>狀態 <%= t.status %></li>
       <li>時間 <%= t.start_at %><%= t.end_at %></li>
-      <li><%= link_to '詳細內容', task_path(t.id) %></li>
+      <li><%= link_to '詳細內容', task_path(t) %></li>
       <div>
         <%= link_to '編輯', edit_task_path(t.id), class: 'btn-sm btn-warning'  %>
         <%= link_to '刪除', task_path(t.id), method: 'delete', class: 'btn-sm btn-danger' %>
