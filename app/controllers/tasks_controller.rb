@@ -1,6 +1,12 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :edit, :update, :destroy]
+
   def index
     @tasks = Task.all
+  end
+
+  def show
+    @task = Task.find_by(id: params[:id])
   end
 
   def new
@@ -17,8 +23,30 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @task = Task.new
+
+    if @task.update(task_params)
+      redirect_to root_path, notice: "編輯成功"
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to root_path, notice: "刪除成功"
+  end
+
+
   private
   def task_params
     params.require(:task).permit(:title, :category, :description, :priority, :status, :start_at, :end_at)
+  end
+  def find_task
+    @task = Task.find_by(id: params[:id])
   end
 end
