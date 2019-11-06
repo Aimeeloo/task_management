@@ -31,9 +31,8 @@ ActiveRecord::Schema.define(version: 2019_11_04_113245) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.string "title"
-    t.string "type"
+    t.string "category "
     t.text "description"
     t.integer "priority"
     t.integer "status"
@@ -41,16 +40,16 @@ ActiveRecord::Schema.define(version: 2019_11_04_113245) do
     t.datetime "end_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "email"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "taggings", "tags"
   add_foreign_key "taggings", "tasks"
-  add_foreign_key "tasks", "users"
 end
