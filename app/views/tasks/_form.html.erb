@@ -15,9 +15,7 @@
       </div>
 
       <div class="col-lg-10 col-md-12 col-sm-12">
-        <%= form.input :category, label: '分類',
-            collection: ['工作','居家','娛樂','學習','其他'],
-            input_html: { multiple: true } %>
+        <%= form.input :category, as: :select, collection: Task.categories.keys, include_blank: false, label: '分類' %>
       </div>
 
       <div class="col-lg-10 col-md-12 col-sm-12">
