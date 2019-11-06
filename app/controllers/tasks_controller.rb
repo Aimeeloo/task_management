@@ -27,12 +27,10 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.new
-
     if @task.update(task_params)
       redirect_to root_path, notice: "編輯成功"
     else
-      render :new
+      render :edit
     end
   end
 
