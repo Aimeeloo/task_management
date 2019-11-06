@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_11_04_113245) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.string "category "
+    t.string "category"
     t.text "description"
     t.integer "priority"
     t.integer "status"
