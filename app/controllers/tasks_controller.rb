@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to root_path, notice: "新增成功"
     else
-      flash[:abert] = "新增失敗"
+      flash[:alert] = "新增失敗"
       render :new
     end
   end
@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to root_path, notice: "編輯成功"
     else
-      flash[:abert] = "編輯失敗"
+      flash[:alert] = "編輯失敗"
       render :edit
     end
   end
