@@ -1,12 +1,12 @@
-<% if @task.errors.any? %>
+<% if task.errors.any? %>
   <ul>
-    <% @task.errors.full_messages.each do |message| %>
+    <% task.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
 
-<%= simple_form_for @task do |form| %>
+<%= simple_form_for task do |form| %>
   <div class="form-inputs ">
     <div class="row">
 
