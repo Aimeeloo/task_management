@@ -1,0 +1,11 @@
+<h1><%= @task.title %></h1>
+
+<ul>
+  <li>時間 <%= @task.start_at %><%= @task.end_at %></li>
+  <li>分類 <%= @task.category %></li>
+  <li>描述 <%= @task.description %></li>
+  <li>優先 <%= @task.priority %></li>
+  <li>狀態 <%= @task.status %></li> 
+</ul>
+
+<%= link_to '回列表', root_path %>
