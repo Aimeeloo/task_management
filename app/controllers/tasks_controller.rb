@@ -17,9 +17,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to root_path, notice: "新增成功"
+      redirect_to root_path, notice: '新增成功'
     else
-      flash[:alert] = "新增失敗"
+      flash.now[:alert] = '新增失敗'
       render :new
     end
   end
@@ -29,16 +29,16 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to root_path, notice: "編輯成功"
+      redirect_to root_path, notice: '編輯成功'
     else
-      flash[:alert] = "編輯失敗"
+      flash.now[:alert] = '編輯失敗'
       render :edit
     end
   end
 
   def destroy
     @task.destroy
-    redirect_to root_path, notice: "刪除成功"
+    redirect_to root_path, notice: '刪除成功'
   end
 
   private
