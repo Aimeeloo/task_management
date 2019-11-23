@@ -1,17 +1,18 @@
 <h1>to-do List</h1>
-<%= link_to '新增事項', new_task_path, class: 'btn btn-success' %>
+<%= link_to t('add_new'), new_task_path, class: 'btn btn-success' %>
 
-<% @tasks.each do |t| %>
+<% @tasks.each do |task| %>
   <div class="task_column">
     <ul>
-      <li><%= t.title %> <%= t.category %></li>
-      <li>優先 <%= t.priority %></li>
-      <li>狀態 <%= t.status %></li>
-      <li>時間 <%= t.start_at %><%= t.end_at %></li>
-      <li><%= link_to '詳細內容', task_path(t) %></li>
+      <li><%= task.title %></li>
+      <li>類型 <%= t("#{task.category}") %></li>
+      <li>優先 <%= t("#{task.priority}") %></li>
+      <li>狀態 <%= t("#{task.status}") %></li>
+      <li>時間 <%= task.start_at %> - <%= task.end_at %></li>
+      <li><%= link_to t('more'), task_path(task) %></li>
       <div>
-        <%= link_to '編輯', edit_task_path(t.id), class: 'btn-sm btn-warning'  %>
-        <%= link_to '刪除', task_path(t.id), method: 'delete', class: 'btn-sm btn-danger' %>
+        <%= link_to t('edit'), edit_task_path(task.id), class: 'btn-sm btn-warning'  %>
+        <%= link_to t('delete'), task_path(task.id), method: 'delete', class: 'btn-sm btn-danger' %>
       </div>
     </ul>
   </div>
