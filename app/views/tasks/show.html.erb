@@ -1,11 +1,11 @@
 <h1><%= @task.title %></h1>
 
 <ul>
-  <li>分類 <%= t("#{@task.category}") %></li> 
-  <li>優先 <%= t("#{@task.priority}") %></li>
-  <li>狀態 <%= t("#{@task.status}") %></li> 
-  <li>時間 <%= @task.start_at %><%= @task.end_at %></li>
-  <li>描述 <%= @task.title %></li>
+  <li><%= t('category') %> <%= t("#{@task.category}") %></li> 
+  <li><%= t('priority') %> <%= t("#{@task.priority}") %></li>
+  <li><%= t('status') %> <%= t("#{@task.status}") %></li> 
+  <li><%= t('period') %> <%= @task.start_at %><%= @task.end_at %></li>
+  <li><%= t('description') %> <%= @task.title %></li>
 </ul>
 
-<%= link_to t('back'), root_path %>
+<%= link_to t('back'), root_path, class: 'btn btn-primary'%>

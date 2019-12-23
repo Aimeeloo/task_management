@@ -1,4 +1,11 @@
 zh-TW:
+  toDoList: 代辦事項
+  title: 標題
+  category: 類型
+  priority: 優先順序
+  status: 狀態
+  period: 時間
+  description: 描述
   pending: 待進行
   processing: 進行中
   completed: 已完成
